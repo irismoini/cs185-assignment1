@@ -1,0 +1,21 @@
+.header{
+
+}
+
+.nav-bar{
+    display: flex;
+}
+
+.nav-bar > div{
+    padding: 10px;
+    background-color: pink;
+}
+
+.main-body{
+    display: flex;
+    
+}
+
+.paragraph{
+    padding: 20px;
+}
