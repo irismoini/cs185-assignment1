@@ -1,58 +1,87 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale="1">
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/7f3c72f003.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script defer src="script.js"></script>
     </head>
 
     <body class='body'>
+
+
+
+
   
         <title>CMPSC 185 Iris Moini Color</title>
+
+       
+
+        <script type="text/javascript">
+            function changeColor(obj, colorName){
+                obj.style.backgroundColor=colorName;
+            }
+        </script>
+        
+
     
     
         <div class="nav-bar">
             <div>
-                <a href=index.html>Home</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href=index.html>Home</a>
             </div>
     
             <div>
-                <a href="art.html">Life in Color</a>
+                <a class="current" href="art.html">Life in Color</a>
             </div>
     
             <div>
-                <a href="poetry.html">Recovery in Poetry</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="poetry.html">Recovery in Poetry</a>
             </div>
 
             <div>
-                <a href="music.html">Memories in Music</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="music.html">Memories in Music</a>
             </div>
                 
         </div>
 
+    
+
     <div class="rearrange">
-      
 
         <div class="title">
             <h1>Life in Color</h1>
         </div>
         
         <div class=textoncolor>
+
+        
+       
         <p>Look at the stars. Look how they shine for you. And everything you do. They were all yellow. I came along
             I wrote a song for you.
             And all the things you do.
             And it was called "Yellow." -Coldplay</p>
+        
+
         </div>
     </div>
 
+    <button onclick="window.scrollTo(0,0)" id="to_top">Back to top</button>
+
+
         <div class="parent">
+
             <div class="child">
                 <div class="center">
-                    <img src="images/f1.jpg">
+                    <img style="max-width: 100%" src="images/f1.jpg">
+                </div>
                 </div>
             </div>
 
             <div class="child">
                 <div class="center">
-                    <img src="images/yellow6.jpg">
+                    <img style="max-width: 100%" src="images/yellow6.jpg">
                 </div>
             
             </div>
@@ -98,12 +127,55 @@
                 </div>
             
             </div>
-
           
             
           
 
         </div>
+
+
+
+       
+
+<script>
+    topButton=document.getElementById("to_top");
+    window.onscroll=function(){scrollFunction()};
+    function scrollFunction(){
+        if(document.body.scrollTop>20||document.documentElement.scrollTop>20){
+            topButton.style.display="block";
+        }else{
+            topButton.style.display="none";
+        }
+    }
+</script>
+    
+
+<script type="text/javascript">
+    const lightbox = document.createElement('div');
+    lightbox.id = "lightbox";
+    document.body.appendChild(lightbox);
+
+    const images = document.querySelectorAll("img");
+    images.forEach(image =>{
+        image.addEventListener("click", e=>{
+            lightbox.className = "active";
+            const img = document.createElement('img');
+            img.src = image.src;
+            while(lightbox.firstChild){
+                lightbox.removeChild(lightbox.firstChild);
+            }
+            lightbox.appendChild(img);
+        });
+    })
+
+    lightbox.addEventListener("click", e=>{
+        console.log(e.target);
+        console.log(e.currentTarget);
+        if(e.target != e.currentTarget)
+            return;
+        lightbox.classList.remove("active");
+    })	
+</script>
     
     
     </body>

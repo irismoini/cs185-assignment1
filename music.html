@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale="1">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body class='body'>
   
         <title>CMPSC 185 Iris Moini Music</title>
+        <script type="text/javascript">
+            function changeColor(obj, colorName){
+                obj.style.backgroundColor=colorName;
+            }
+        </script>
     
        
     
         <div class="nav-bar">
             <div>
-                <a href="index.html">Home</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="index.html">Home</a>
             </div>
     
             <div>
-                <a href="art.html">Life in Color</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="art.html">Life in Color</a>
             </div>
     
             <div>
-                <a href="poetry.html">Recovery in Poetry</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="poetry.html">Recovery in Poetry</a>
             </div>
 
             <div>
-                <a href="music.html">Memories in Music</a>
+                <a class="current" href="music.html">Memories in Music</a>
             </div>
                 
         </div> 
@@ -34,6 +40,8 @@
         </div>
 
         <div class="explination">
+
+            <div class="centering2"> 
 
         <p>You know what I like, music. I think it's really hard to describe how people feel about music though. 
             But I think what I like about music is that it makes me feel things I wouldn't otherwise, mainly I think 
@@ -46,28 +54,38 @@
              me. And I like how it's always been something I've known I've liked even when everything else around me is 
             changing. Also, I like how I'm not the only one who feels this way about it, I like how other people can 
             feel these things too.</p>
+        </div>
 
         </div>
 
        
-    <div class="layout"> 
+<div class="layout"> 
+
+
     <div class="video">
-        <iframe height="450" width="450"  
+        <div class="centering3">
+        <iframe height="440" width="440"  
         src="https://www.youtube.com/embed/KhjTa_7Nq6Y"> 
         </iframe> 
     </div>
+    </div>
 
     <div class="video">
-        <iframe height="450" width="450"  
+        <div class="centering3">
+        <iframe height="440" width="440"  
         src="https://www.youtube.com/embed/mhmGwTDpPf0"> 
         </iframe> 
     </div>
+    </div>
 
     <div class="video">
-        <iframe height="450" width="450"  
+        <div class="centering3">
+        <iframe height="440" width="440"  
         src="https://www.youtube.com/embed/_w5jPT8LMF0"> 
         </iframe> 
+        </div>
     </div>
+</div>
 
 
 </div>   

@@ -1,30 +1,41 @@
 <!DOCTYPE html>
+
 <html>
     <head> 
+        <meta name="viewport" content="width=device-width, initial-scale="1">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     
     </head>
 <body class='body'>
   
+  
+
     <title>CMPSC 185 Iris Moini</title>
+
+    <script type="text/javascript">
+        function changeColor(obj, colorName){
+            obj.style.backgroundColor=colorName;
+        }
+    </script>
 
    
 
     <div class="nav-bar">
         <div>
-            <a href="index.html">Home</a>
+            <a class="current" href="index.html">Home</a>
         </div>
 
         <div>
-            <a href="art.html">Life in Color</a>
+            <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="art.html">Life in Color</a>
         </div>
 
         <div>
-            <a href="poetry.html">Recovery in Poetry</a>
+            <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="poetry.html" >Recovery in Poetry</a>
         </div>
 
         <div>
-            <a href="music.html">Memories in Music</a>
+            <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="music.html">Memories in Music</a>
         </div>
             
     </div>
@@ -40,6 +51,7 @@
         </div>
 
         <div class="paragraph">
+            <div class="paragraphin">
             <p>
                 My name is Iris (she/her/hers) and I&#39m a third year CS major at UCSB. 
                 I&#39m excited to be taking this course and to be learning as much as I 
@@ -55,9 +67,36 @@
                 snowboard when I can and go to the beach. Mostly, I love meeting new 
                 people and listening to different perspectives! :) 
             </p>
+            </div>
         </div>
         
     </div>
+
+    <script type="text/javascript">
+        const lightbox = document.createElement('div');
+        lightbox.id = "lightbox";
+        document.body.appendChild(lightbox);
+    
+        const images = document.querySelectorAll("img");
+        images.forEach(image =>{
+            image.addEventListener("click", e=>{
+                lightbox.className = "active";
+                const img = document.createElement('img');
+                img.src = image.src;
+                while(lightbox.firstChild){
+                    lightbox.removeChild(lightbox.firstChild);
+                }
+                lightbox.appendChild(img);
+            });
+        })
+        lightbox.addEventListener("click", e=>{
+            console.log(e.target);
+            console.log(e.currentTarget);
+            if(e.target != e.currentTarget)
+                return;
+            lightbox.classList.remove("active");
+        })	
+    </script>
 
 </body>
 

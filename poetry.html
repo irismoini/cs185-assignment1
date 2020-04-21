@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale="1">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 
     <body class='body'>
   
         <title>CMPSC 185 Iris Moini Poetry</title>
+        <script type="text/javascript">
+            function changeColor(obj, colorName){
+                obj.style.backgroundColor=colorName;
+            }
+        </script>
     
       
     
         <div class="nav-bar">
             <div>
-                <a href="index.html">Home</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="index.html">Home</a>
             </div>
     
             <div>
-                <a href="art.html">Life in Color</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="art.html">Life in Color</a>
             </div>
     
             <div>
-                <a href="poetry.html">Recovery in Poetry</a>
+                <a class="current" href="poetry.html">Recovery in Poetry</a>
             </div>
 
             <div>
-                <a href="music.html">Memories in Music</a>
+                <a onmouseover="changeColor(this, 'plum')" onmouseout="changeColor(this, 'pink')" href="music.html">Memories in Music</a>
             </div>
                 
         </div>
@@ -42,10 +49,11 @@
 
         <div class="poetry1">
 
-            <div>
+          <div class="centering4">
                 <img src="images/p2.jpg">
             </div>
-    
+            
+    <div class="centering4">
         <h12>Eight Types of Rest</h2>
             <p>1.) time away </p>
             <p>2.) permission to not be helpful</p>
@@ -55,16 +63,20 @@
             <p>6.) stillness to decompress</p>
             <p>7.) safe space </p>
             <p> 8.) alone time at home <p>
+        </div>
+    </div>
         
 
-        </div>
+     
 
         <div class="poetry1">
-            <div>
+          
+            <div class="centering4">
                 <img src="images/l1.jpg">
             </div>
 
             <div class="line">
+                <div class="centering4">
             <p> "I think it is brave that you get up in the morning when your heartaches and your 
                 life is messy and you do not feel like being soft for the world. I think it is brave 
                 that you continue to love, and express, and open your soul, despite the way you were 
@@ -74,17 +86,21 @@
                 move forward-- because that is what makes you strong-- that is what makes you strong."
                  ~Bianca Sparacino</p>
                 </div>
+            </div>
 
-                
+           
 
         </div>
 
         <div class="poetry1">
-            <div>
+            
+            <div class="centering4"> 
                 <img src="images/lan5.jpg">
             </div>
-
-            <p>Self Growth</p>
+            
+        <div class="centering4">
+            <h12>Self Growth</h2>
+            
             <p>1.) keeping your promises</p>
             <p>2.) maintaining boundaries</p>
             <p>3.) stepping out of your comfort zone</p>
@@ -93,13 +109,38 @@
             <p>6.) letting go of other's expectations</p>
             <p>7.) seeking deep connection</p>
             <p>8.) respecting your body's needs</p>
+        </div>
            
-        
+       
            
             
         </div>
 
-
+        <script type="text/javascript">
+            const lightbox = document.createElement('div');
+            lightbox.id = "lightbox";
+            document.body.appendChild(lightbox);
+        
+            const images = document.querySelectorAll("img");
+            images.forEach(image =>{
+                image.addEventListener("click", e=>{
+                    lightbox.className = "active";
+                    const img = document.createElement('img');
+                    img.src = image.src;
+                    while(lightbox.firstChild){
+                        lightbox.removeChild(lightbox.firstChild);
+                    }
+                    lightbox.appendChild(img);
+                });
+            })
+            lightbox.addEventListener("click", e=>{
+                console.log(e.target);
+                console.log(e.currentTarget);
+                if(e.target != e.currentTarget)
+                    return;
+                lightbox.classList.remove("active");
+            })	
+        </script>
         
 
         
