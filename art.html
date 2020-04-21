@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+
+  
+ 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale="1">
         <link rel="stylesheet" href="style.css">
@@ -9,7 +12,7 @@
     </head>
 
     <body class='body'>
-
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button>
 
 
 
@@ -67,7 +70,9 @@
         </div>
     </div>
 
-    <button onclick="window.scrollTo(0,0)" id="to_top">Back to top</button>
+   
+
+
 
 
         <div class="parent">
@@ -135,22 +140,12 @@
 
 
 
-       
 
-<script>
-    topButton=document.getElementById("to_top");
-    window.onscroll=function(){scrollFunction()};
-    function scrollFunction(){
-        if(document.body.scrollTop>20||document.documentElement.scrollTop>20){
-            topButton.style.display="block";
-        }else{
-            topButton.style.display="none";
-        }
-    }
-</script>
+
     
 
 <script type="text/javascript">
+//code from TA benu changmai 
     const lightbox = document.createElement('div');
     lightbox.id = "lightbox";
     document.body.appendChild(lightbox);
@@ -176,6 +171,30 @@
         lightbox.classList.remove("active");
     })	
 </script>
+
+
+<script>
+    //code from W3 Schools
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
     
     
     </body>
